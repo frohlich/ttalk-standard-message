@@ -125,12 +125,10 @@
             "description": "Filtering records fields"
           },
           {
-            "name": "body",
+            "name": "prospect",
             "in": "body",
-            "required": false,
-            "description": "Prospect a ser incluí\u00addo.",
             "schema": {
-              "type": "object"
+              "$ref": "#/definitions/Prospect"
             }
           }
         ],
@@ -217,13 +215,6 @@
             "exclusiveMaximum": false,
             "exclusiveMinimum": false,
             "description": "Quantidade de Itens por Página"
-          },
-          {
-            "name": "prospect",
-            "in": "body",
-            "schema": {
-              "$ref": "#/definitions/Prospect"
-            }
           }
         ],
         "responses": {
@@ -275,12 +266,10 @@
             "description": "Filtering records fields"
           },
           {
-            "name": "body",
+            "name": "prospect",
             "in": "body",
-            "required": false,
-            "description": "Prospect a ser atualizado.",
             "schema": {
-              "type": "object"
+              "$ref": "#/definitions/Prospect"
             }
           }
         ],
