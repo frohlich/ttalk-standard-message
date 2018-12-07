@@ -523,7 +523,7 @@
         "ConsumerId": {
           "description": "Código do Cliente|Prospect",
           "example": "CLI001",
-          "type": "string"
+          "type": "integer"
         },
         "ConsumerUnit": {
           "description": "Loja do Cliente|Prospect",
