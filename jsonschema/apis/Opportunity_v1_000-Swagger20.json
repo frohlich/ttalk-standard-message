@@ -154,6 +154,12 @@
             "schema": {
               "$ref": "#/definitions/ErrorModel_Error"
             }
+          },
+          "500": {
+            "description": "Erro no momento da inclusão",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel_Error"
+            }
           }
         }
       }
