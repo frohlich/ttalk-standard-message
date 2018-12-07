@@ -11,7 +11,7 @@
     }
   },
   "host": "localhost:8080",
-  "basePath": "/api/crm/v1",
+  "basePath": "/dts/datasul-rest/resources/prg/crm/v1/",
   "schemes": [
     "http"
   ],
@@ -22,7 +22,7 @@
     "application/json"
   ],
   "paths": {
-    "/prospects": {
+    "/dts/datasul-rest/resources/prg/crm/v1/prospects": {
       "get": {
         "description": "Retorna lista completa de prospects",
         "summary": "Retorna lista de Prospects",
@@ -149,7 +149,7 @@
         }
       }
     },
-    "/prospects/{Code}": {
+    "/dts/datasul-rest/resources/prg/crm/v1/prospects/{Code}": {
       "get": {
         "description": "Retorna prospect pelo seu Código",
         "summary": "Retorna prospect pelo seu Código",
