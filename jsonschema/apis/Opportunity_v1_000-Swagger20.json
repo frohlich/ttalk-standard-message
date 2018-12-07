@@ -138,7 +138,7 @@
           "201": {
             "description": "Operção realizada com sucesso",
             "schema": {
-              "$ref": "#/definitions/PagedOpportunity"
+              "$ref": "#/definitions/OpportunityInfo"
             },
             "headers": {}
           },
