@@ -1,0 +1,424 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.000",
+    "title": "Prospects",
+    "description": "API para a entidade Prospects (Prospects) para produtos TOTVS",
+    "contact": {
+      "email": "comiteintegracao@totvs.com.br",
+      "name": "T-Talk",
+      "url": "api.Totvs.com.br"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/api/crm/v1",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/prospects": {
+      "get": {
+        "description": "Retorna lista completa de prospects",
+        "summary": "Retorna lista de Prospects",
+        "tags": [
+          "Prospects"
+        ],
+        "operationId": "ProspectsGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Cabeçalho usado para autorização das requisições"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            },
+            "description": "Ordenação da Coleção"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Filtering records fields"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "default": 1,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 1.0,
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "Paginação da Coleção"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "default": 10,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "Quantidade de Itens por Página"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso!",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "Registro não encontrado!",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel_Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Inclui um prospect conforme dados enviados na requisição.",
+        "summary": "Inclui um prospect",
+        "tags": [
+          "Prospects"
+        ],
+        "operationId": "ProspectsPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Cabeçalho usado para autorização das requisições"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Filtering records fields"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "Prospect a ser incluí­do.",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso!",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Erro durante inclusão do prospect!",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel_Error"
+            }
+          }
+        }
+      }
+    },
+    "/prospects/{Code}": {
+      "get": {
+        "description": "Retorna prospect pelo seu Código",
+        "summary": "Retorna prospect pelo seu Código",
+        "tags": [
+          "Code"
+        ],
+        "operationId": "ProspectsByCodeGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Cabeçalho usado para autorização das requisições"
+          },
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Identificador único o Prospect"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            },
+            "description": "Ordenação da Coleção"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Filtering records fields"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "default": 1,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 1.0,
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "Paginação da Coleção"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "default": 10,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "Quantidade de Itens por Página"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso!",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Prospect não localizado na base!",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel_Error"
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Atualiza cadastro de prospect conforme dados enviados na requisição",
+        "summary": "Altera um Prospect",
+        "tags": [
+          "Code"
+        ],
+        "operationId": "ProspectsByCodePut",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Cabeçalho usado para autorização das requisições"
+          },
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Identificador único o Prospect"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Filtering records fields"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "Prospect a ser atualizado.",
+            "schema": {
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso!",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Erro durante a alteração do Prospect!",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel_Error"
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado!",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel_Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Exclui cadastro de Prospect conforme dados enviados na requisição.",
+        "summary": "Exclui um prospect",
+        "tags": [
+          "Code"
+        ],
+        "operationId": "ProspectsByCodeDelete",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Cabeçalho usado para autorização das requisições"
+          },
+          {
+            "name": "Code",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Identificador único o Prospect"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso!",
+            "schema": {
+              "type": "object"
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Erro durante a exclusão do Prospect!",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel_Error"
+            }
+          },
+          "404": {
+            "description": "Registro não encontrado!",
+            "schema": {
+              "$ref": "#/definitions/ErrorModel_Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ErrorModelBase": {
+      "title": "ErrorModelBase",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Código identificador do erro.",
+          "type": "string"
+        },
+        "message": {
+          "description": "Literal no idioma da requisição descrevendo o erro para o usuário.",
+          "type": "string"
+        },
+        "detailedMessage": {
+          "description": "Mensagem técnica e mais detalhada do erro.",
+          "type": "string"
+        },
+        "helpUrl": {
+          "description": "URI para documentação do erro.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "detailedMessage"
+      ]
+    },
+    "ErrorModel_Error": {
+      "title": "ErrorModel_Error",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Código identificador do erro.",
+          "type": "string"
+        },
+        "message": {
+          "description": "Literal no idioma da requisição descrevendo o erro para o usuário.",
+          "type": "string"
+        },
+        "detailedMessage": {
+          "description": "Mensagem técnica e mais detalhada do erro.",
+          "type": "string"
+        },
+        "helpUrl": {
+          "description": "URI para documentação do erro.",
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorModelBase"
+          }
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "detailedMessage"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Prospects",
+      "description": ""
+    },
+    {
+      "name": "Code",
+      "description": ""
+    }
+  ]
+}
