@@ -142,6 +142,13 @@
             },
             "headers": {}
           },
+          "201": {
+            "description": "Operção realizada com sucesso",
+            "schema": {
+              "$ref": "#/definitions/OpportunityInfo"
+            },
+            "headers": {}
+          },
           "400": {
             "description": "Erro no momento da inclusão",
             "schema": {
