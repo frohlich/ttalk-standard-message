@@ -136,7 +136,9 @@
           "200": {
             "description": "Operação realizada com sucesso!",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "$ref": "#/definitions/Prospect"
+
             },
             "headers": {}
           },
