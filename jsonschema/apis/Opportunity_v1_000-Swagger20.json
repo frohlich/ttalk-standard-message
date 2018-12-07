@@ -418,7 +418,7 @@
         "Seller": {
           "description": "Código do Vendedor",
           "example": "VEND01",
-          "type": "string"
+          "type": "integer"
         },
         "SellerName": {
           "description": "Nome do Vendedor",
@@ -447,12 +447,12 @@
         "Process": {
           "description": "Processo de Venda",
           "example": "000001",
-          "type": "string"
+          "type": "integer"
         },
         "Stage": {
           "description": "Estágio da Venda",
           "example": "000001",
-          "type": "string"
+          "type": "integer"
         },
         "Notes": {
           "description": "Notas",
