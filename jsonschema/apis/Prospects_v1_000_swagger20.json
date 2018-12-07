@@ -135,7 +135,7 @@
         "responses": {
           "200": {
             "description": "Operação realizada com sucesso!",
-            "schema": {
+            "schema": { 
               "$ref": "#/definitions/Prospect"
             },
             "headers": {}
