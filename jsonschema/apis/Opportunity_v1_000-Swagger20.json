@@ -135,7 +135,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Operção realizada com sucesso",
             "schema": {
               "$ref": "#/definitions/OpportunityInfo"
