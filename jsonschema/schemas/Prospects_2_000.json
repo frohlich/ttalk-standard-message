@@ -338,7 +338,7 @@
 				"Address": {
 					"type": "array",
 					"description": "Endereço Principal",
-					"$ref": "https://rawgit.com/totvs/ttalk-standard-message/master/jsonschema/schemas/types/address_2_000.json#/definitions/AddressType",
+					"$ref": "https://rawgit.com/totvs/ttalk-standard-message/master/jsonschema/schemas/types/ddress_2_000.json#/definitions/AddressType",
 					"x-totvs": [
 						{
 							"product": "datasul",
